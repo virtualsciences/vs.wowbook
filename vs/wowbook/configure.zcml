@@ -1,0 +1,27 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:security="http://namespaces.zope.org/security"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    i18n_domain="vs.rightoverview">
+
+  <five:registerPackage package="." initialize=".initialize"/>
+  <include file="profiles.zcml" />
+
+  <browser:resourceDirectory
+    name="wowbook" directory="resources" />
+
+  <browser:page
+    name="wowbook"
+    for="Products.ATContentTypes.interfaces.file.IATFile"
+    template="wowbook.pt"
+    class=".wowbook.WowBookView"
+    permission="zope2.View"
+    />
+
+  <cmf:registerDirectory name="wowbook"/>
+
+</configure>
