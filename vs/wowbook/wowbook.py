@@ -22,7 +22,7 @@ class WowBookView(DocumentViewerView):
     def iframe(self, target, height):
         return (
             '<iframe src="' + self.context.absolute_url() + '/' + target +
-            '" style="width: 100%; height: ' + height + '"/>')
+            '" style="width: 100%; height: ' + height + 'px"/>')
 
 
 class WowBookUtils(WowBookView):
