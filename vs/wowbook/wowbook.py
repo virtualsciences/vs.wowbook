@@ -8,7 +8,6 @@ from collective.documentviewer.browser.views import DocumentViewerView
 class WowBookView(DocumentViewerView):
 
     def pages(self):
-
         if self.enabled:
             data = self.dv_data()
             path = data['resources']['page']['image']
@@ -24,3 +23,9 @@ class WowBookView(DocumentViewerView):
         return (
             '<iframe src="' + self.context.absolute_url() + '/' + target +
             '" style="width: 100%; height: ' + height + '"/>')
+
+
+class WowBookUtils(WowBookView):
+
+    def index(self):
+        return self
