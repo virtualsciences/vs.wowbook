@@ -22,6 +22,13 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="wowbook_utils"
+    for="Products.ATContentTypes.interfaces.file.IATFile"
+    class=".wowbook.WowBookUtils"
+    permission="zope2.View"
+    />
+
   <cmf:registerDirectory name="wowbook"/>
 
 </configure>
